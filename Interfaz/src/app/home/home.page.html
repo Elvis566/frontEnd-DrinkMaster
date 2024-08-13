@@ -1,0 +1,26 @@
+<ion-content class="yo" [fullscreen]="true">
+  <div class="boton-confi">
+    <ion-button fill="clear" shape="round" routerLink="/config">
+      <ion-icon name="settings-outline" style="font-size: 40px;"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="avatar" *ngIf="avatars">
+    <ion-avatar aria-hidden="true">
+      <img alt="" src="{{avatars.url}}" />
+      <h1>{{apodo}}</h1>
+    </ion-avatar>
+  </div>
+
+  <div class="botones-inferiores">
+    <ion-button routerLink="/unirse">
+      <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+      Unirse
+    </ion-button>
+    <ion-button routerLink="/crear">
+      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+      Crear
+    </ion-button>
+  </div>
+
+</ion-content>

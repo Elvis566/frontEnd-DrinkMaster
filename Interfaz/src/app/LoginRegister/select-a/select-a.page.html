@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">selectA</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div *ngIf="pase">
+    <div class="galeria" >
+      <ion-list>
+        <ul *ngFor="let item of datosAvatars" >
+          <li> 
+            <button (click)="captura(item)">
+              <ion-avatar clas="avtlogo">
+                <img  alt="{{item.name}}" src={{item.url}} />
+              </ion-avatar>  
+            </button>
+          </li>
+        </ul>
+      </ion-list>
+    </div> 
+  </div>
+
+  <div class="form-container">
+    <form class="form">
+     <div *ngIf="itemId">
+        <button type="button" class="avatar" (click)="goGaleria()">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="{{itemUrl}}" />
+          </ion-avatar>
+        </button>
+     </div>
+     <div *ngIf="camino">
+      <div *ngIf="datosAvatars" >
+        <button type="button" class="avatar" (click)="goGaleria()">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="{{datosAvatars[0].url}}" />
+          </ion-avatar>
+        </button>
+      </div>
+     </div>
+
+      <label for="">Ingrese un apodo de usuario para comenzar</label>
+    
+      <div class="inputForm">
+        <input type="text" #apodo class="input" placeholder="Enter your apodo">
+        <ion-icon name="person"></ion-icon>
+      </div>
+
+      <button type="button" class="button-submit" (click)="saveUser(apodo)">Let's Go</button>
+
+    </form>
+
+    @if (cargando) {
+      <div style="text-align: center;">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </div>
+    }
+
+  </div>
+
+
+
+</ion-content>

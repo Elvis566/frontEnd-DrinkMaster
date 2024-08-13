@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+
+  <div class="avatar">
+    <ion-avatar>
+      <img src="/assets/icon/Logo.jpg"/>
+    </ion-avatar>
+  </div>
+  
+  
+  <div class="form-container">
+    <form class="form">
+      <div class="inputForm">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input #email type="text" class="input" placeholder="Enter your Email">
+      </div>
+    
+      <div class="inputForm">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input  #password type="password" class="input" placeholder="Enter your Password">
+        <ion-icon name="eye-off-outline"></ion-icon>
+      </div>
+    
+      <div class="flex-row1">
+          <span class="span">Forgot password?</span>
+      </div>
+
+      <button class="button-submit" (click)="login(email, password)">Sign In</button>
+
+      <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 3px 0;
+    padding: 0 20px; /* Ajusta el padding para evitar que las líneas toquen los bordes */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+    min-height: 10vh;
+}
+
+.line {
+    flex: 1;
+    height: 3px;
+    background-color: black; /* Color de las líneas */
+    margin: 0 20px; /* Espacio entre la línea y el texto */
+}
+
+.titulo h1 {
+    font-size: 1.8em; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
