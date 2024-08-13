@@ -11,7 +11,7 @@ export class ApiNodeService {
   saveUser(apodo:any, email:any, password:any, avatar_id:any){
     // let avt  = new FormData();
     // avt.append('avatar', avatar);
-    return this.httpclient.post('http://localhost:3000/user/create',{
+    return this.httpclient.post('http://backend-drinkmaster-production.up.railway.app/user/create',{
       apodo: apodo, 
       email: email,
       password: password,
@@ -20,50 +20,50 @@ export class ApiNodeService {
   }
 
   createGame(user_id:any, game_id:any){
-    return this.httpclient.post('http://localhost:3000/game/create',{
+    return this.httpclient.post('http://backend-drinkmaster-production.up.railway.app/game/create',{
       user_id:user_id,
       game_id: game_id
     })
   }
 
   loginUser(email:string, password:string){
-    return this.httpclient.post('http://localhost:3000/user/login',{
+    return this.httpclient.post('http://backend-drinkmaster-production.up.railway.app/user/login',{
       email: email,
       password: password
     })
   }
 
   getTypeGame(){
-    return this.httpclient.get('http://localhost:3000/gameType/obtener')
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/gameType/obtener')
   }
 
   getAvatarAll(){
-    return this.httpclient.get('http://localhost:3000/avatar/obtenerAll')
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/avatar/obtenerAll')
   }
 
  
 
   getAvatar(id:any){
-    return this.httpclient.get('http://localhost:3000/avatar/obtener/'+id)
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/avatar/obtener/'+id)
   }
 
   getUserAll(id:any){
-    return this.httpclient.get('http://localhost:3000/user/obtener/'+id)
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/user/obtener/'+id)
   }
 
   getFriends(id:any){
-    return this.httpclient.get('http://localhost:3000/friends/obtener/'+id)
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/friends/obtener/'+id)
   }
 
   createFriend(user_id:any, friend_id:any){
-    return this.httpclient.post('http://localhost:3000/friends/create',{
+    return this.httpclient.post('http://backend-drinkmaster-production.up.railway.app/friends/create',{
       user_id:user_id,
       friend_id: friend_id
     })
   }
 
   createPlayer(user_id:any, game_id:any){
-    return this.httpclient.post('http://localhost:3000/player/create',{
+    return this.httpclient.post('http://backend-drinkmaster-production.up.railway.app/player/create',{
       user_id:user_id,
       game_id:game_id
   
@@ -71,11 +71,11 @@ export class ApiNodeService {
   }
 
   getSala(id:any){
-    return this.httpclient.get('http://localhost:3000/game/obtener/'+id);
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/game/obtener/'+id);
   }
 
   getPlayers(id:any){
-    return this.httpclient.get('http://localhost:3000/player/obtener/'+id);
+    return this.httpclient.get('http://backend-drinkmaster-production.up.railway.app/player/obtener/'+id);
   }
 
 
