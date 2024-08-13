@@ -20,9 +20,9 @@
       </div>
         <span>¿Tienes un codigo?</span>
       <div class="input-container">
-        <input type="text" class="input" placeholder="Ingrese o pegue el código"> 
+        <input type="text" #codigo class="input" placeholder="Ingrese o pegue el código"> 
       </div>
-      <button>Unirse</button>
+      <button (click)="unirGame(codigo)">Unirse</button>
     </div>
   </div>
 

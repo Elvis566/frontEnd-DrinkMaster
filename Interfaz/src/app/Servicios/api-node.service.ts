@@ -62,10 +62,10 @@ export class ApiNodeService {
     })
   }
 
-  createPlayer(user_id:any, game_id:any){
+  createPlayer(user_id:any, codigo: any){
     return this.httpclient.post('https://backend-drinkmaster-production.up.railway.app/player/create',{
       user_id:user_id,
-      game_id:game_id
+      codigo:codigo
   
     })
   }
