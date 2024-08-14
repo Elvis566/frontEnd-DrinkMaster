@@ -21,4 +21,10 @@ export class ConfigPage implements OnInit {
     });
   }
 
+
+  cerrarSeccion(){
+    localStorage.clear()
+
+  }
+
 }
