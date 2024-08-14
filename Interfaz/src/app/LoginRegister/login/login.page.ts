@@ -30,6 +30,7 @@ export class LoginPage  {
       error:(e:any)=>{
         debugger
         console.log(e);
+        this.msg = e.message
       }
     })
   }
