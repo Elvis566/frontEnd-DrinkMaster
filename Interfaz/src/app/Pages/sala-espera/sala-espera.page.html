@@ -45,7 +45,7 @@
           <ion-label>Invitar Amigos</ion-label>
         </ion-item>
 
-        <ion-modal #modal trigger="open-modal">
+        <ion-modal *ngIf="amigos" #modal trigger="open-modal">
           <ng-template>
             <ion-content>
               <ion-toolbar>
@@ -55,7 +55,7 @@
                 </ion-buttons>
               </ion-toolbar>
               <ion-list>
-                <ion-item *ngFor="let item of jugadores">
+                <ion-item *ngFor="let item of amigos">
                   <ion-avatar slot="start">
                     <img [src]="item.avatar" />
                   </ion-avatar>

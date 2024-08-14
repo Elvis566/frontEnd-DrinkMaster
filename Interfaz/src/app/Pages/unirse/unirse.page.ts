@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class UnirsePage implements OnInit {
 
   id: any= localStorage.getItem('idUser')
 
-  constructor(private apiS:ApiNodeService) { }
+  constructor(private apiS:ApiNodeService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,7 @@ export class UnirsePage implements OnInit {
   unirGame(codigo:any){
     this.apiS.createPlayer(this.id, codigo.value).subscribe({
       next:(data:any)=>{
+        this.router.navigate(['/sala-espera'])
 
       },error:(e:any)=>{
         console.log(e);

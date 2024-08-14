@@ -41,6 +41,9 @@ export class SelectAPage implements OnInit {
     this.apiS.getAvatarAll().subscribe({
       next:(datos:any)=> {
         this.datosAvatars= datos.avatars;
+        this.itemId= datos.avatars[0].id
+        this.itemUrl = datos.avatars[0].url
+
       },
       error:(e:any)=> {
         debugger

@@ -12,8 +12,6 @@ export class LoginPage  {
   constructor( private apiS: ApiNodeService, private router:Router) { }
 
   login(email:any, password:any){
-    console.log(email.value+password.value);
-    debugger
     this.apiS.loginUser(email.value, password.value).subscribe({
       next: (datos:any)=>{
 
@@ -21,11 +19,10 @@ export class LoginPage  {
         localStorage.setItem('foto', datos.user.avatar_id)
         localStorage.setItem('idUser', datos.user.id)
 
-
-
         this.router.navigate(['/tabs-inicio'])
       },
       error:(e:any)=>{
+        debugger
         console.log(e);
       }
     })
