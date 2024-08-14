@@ -17,12 +17,10 @@
         <ion-icon name="share-outline" slot="start" size="large"></ion-icon>
         <ion-label>Compartir App</ion-label>
       </ion-item>
-      <ion-button (click)="cerrarSeccion()" expand="block" fill="clear" shape="round">
+      <ion-item [button]="true" (click)="cerrarSeccion()" expand="block" fill="clear" shape="round">
         <ion-icon name="log-in-outline" slot="start" size="large"></ion-icon>
         <ion-label>Cerrar Session</ion-label>
-      </ion-button>
-          
-      
+      </ion-item> 
     </ion-list>
 
 </ion-content>

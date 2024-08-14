@@ -44,7 +44,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   getFriends(){
-    this.aps.getFriends(this.idUser).subscribe({
+    this.aps.getFriends(this.id).subscribe({
       next:(data:any)=> {
         this.amigos = data.friendsData
         // this.avatar_id = data.friendsData.avatar
