@@ -18,7 +18,7 @@ export class ConfigPage implements OnInit {
     await Share.share({
       title: 'DrinkMaster',
       text: 'Es algo realmente asombroso que debes ver jugar hoy mismo',
-      url: 'http://ionicframework.com/',
+      url: 'https://frontend-drinkmaster.web.app/',
     });
   }
 
