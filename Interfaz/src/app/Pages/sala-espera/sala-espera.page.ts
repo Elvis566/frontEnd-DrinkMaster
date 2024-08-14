@@ -54,6 +54,15 @@ export class SalaEsperaPage implements OnInit {
     })
   }
 
+  createPlayer(codigo:any){
+    this.aps.createPlayer(this.idUser, codigo.value).subscribe({
+      next:(data:any)=>{
+
+      },error:(e:any)=>{
+        console.log(e);
+      }
+    })
+  }
   
 
 }

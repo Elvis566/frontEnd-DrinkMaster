@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'buscar-amigos',
     loadChildren: () => import('./Pages/buscar-amigos/buscar-amigos.module').then( m => m.BuscarAmigosPageModule)
   },
+  {
+    path: 'game',
+    loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
+  },
 
 
 ];

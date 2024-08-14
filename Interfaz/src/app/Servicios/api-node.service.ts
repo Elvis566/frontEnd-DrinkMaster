@@ -78,6 +78,10 @@ export class ApiNodeService {
     return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/player/obtener/'+id);
   }
 
+  getCars(id:any){
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/card/obtener/'+id)
+  }
+
 
 
 
