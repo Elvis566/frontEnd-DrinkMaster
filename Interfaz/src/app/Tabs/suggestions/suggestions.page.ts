@@ -22,8 +22,6 @@ export class SuggestionsPage {
     private apis:ApiNodeService
   ) {
     this.feedbackForm = this.formBuilder.group({
-      nombre: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
       comentario: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
