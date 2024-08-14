@@ -56,7 +56,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   createPlayer(codigo:any){
-    this.aps.createPlayer(this.idUser, codigo.value).subscribe({
+    this.aps.createPlayer(this.idUser, codigo).subscribe({
       next:(data:any)=>{
         this.router.navigate(['/game'])
 
