@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiNodeService } from 'src/app/Servicios/api-node.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 })
 export class LoginPage  {
 
-  constructor( private apiS: ApiNodeService, private router:Router) { }
+  constructor( private apiS: ApiNodeService, private router:Router,
+              private alertController: AlertController) { }
 
   login(email:any, password:any){
     this.apiS.loginUser(email.value, password.value).subscribe({
@@ -24,10 +26,19 @@ export class LoginPage  {
       error:(e:any)=>{
         debugger
         console.log(e);
+        this.presentAlert('Login Failed', 'Incorrect email or password.');
       }
     })
-    
-    
   }
 
+  async presentAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
 }
