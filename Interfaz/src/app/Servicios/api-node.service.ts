@@ -87,6 +87,13 @@ export class ApiNodeService {
 
   }
 
+  createSugerencia(descripcion:any, user_id: any){
+    return this.httpclient.post('https://backend-drinkmaster-production.up.railway.app/sugerencia/create',{
+      descripcion:descripcion,
+      user_id: user_id
+    })
+  }
+
 
 
 

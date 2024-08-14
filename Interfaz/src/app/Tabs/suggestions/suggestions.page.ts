@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 
 
 @Component({
@@ -12,11 +13,13 @@ import { HttpClient } from '@angular/common/http';
 export class SuggestionsPage {
 
   feedbackForm: FormGroup;
+  idUser: any = localStorage.getItem('idUser')
 
   constructor(
     private formBuilder: FormBuilder,
     private alertController: AlertController,
-    private http: HttpClient
+    private http: HttpClient,
+    private apis:ApiNodeService
   ) {
     this.feedbackForm = this.formBuilder.group({
       nombre: ['', [Validators.required]],
@@ -27,14 +30,10 @@ export class SuggestionsPage {
 
   async enviarComentario() {
     if (this.feedbackForm.valid) {
-      const { nombre, email, comentario } = this.feedbackForm.value;
+      const { comentario } = this.feedbackForm.value;
 
       // Enviar los datos al backend
-      this.http.post('https://tu-backend.com/api/comentarios', {
-        nombre,
-        email,
-        comentario
-      }).subscribe(
+      this.apis.createSugerencia(comentario, this.idUser).subscribe(
         async response => {
           // Mostrar alerta de éxito
           const alert = await this.alertController.create({
