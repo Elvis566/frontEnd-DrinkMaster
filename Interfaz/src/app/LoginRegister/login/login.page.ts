@@ -18,6 +18,7 @@ export class LoginPage  {
   login(email:any, password:any){
     this.apiS.loginUser(email.value, password.value).subscribe({
       next: (datos:any)=>{
+        
         this.msg = datos.message
 
         localStorage.setItem('apodo', datos.user.apodo)
