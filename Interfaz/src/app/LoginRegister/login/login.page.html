@@ -26,17 +26,18 @@
 
       <button class="button-submit" id="open-toast" (click)="login(email, password)">Sign In</button>
 
-      <ion-toast
+      <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
+    </form>
+  </div>
+
+  <ion-toast
         message={{msg}}
         trigger="open-toast"
         swipeGesture="vertical"
         position="bottom"
         positionAnchor="footer"
+        duration="2000"
+        color="white"
     ></ion-toast>
-
-      <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
-    </form>
-  </div>
-
-
+    
 </ion-content>

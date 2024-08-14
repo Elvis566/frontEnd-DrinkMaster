@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Share } from '@capacitor/share';
 
 @Component({
@@ -8,7 +9,7 @@ import { Share } from '@capacitor/share';
 })
 export class ConfigPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,14 +18,14 @@ export class ConfigPage implements OnInit {
     await Share.share({
       title: 'DrinkMaster',
       text: 'Es algo realmente asombroso que debes ver jugar hoy mismo',
-      url: 'http://ionicframework.com/',
+      url: 'https://frontend-drinkmaster.web.app/',
     });
   }
 
 
   cerrarSeccion(){
     localStorage.clear()
-
+    this.router.navigate(['/login'])
   }
 
 }

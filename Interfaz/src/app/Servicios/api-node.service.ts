@@ -82,6 +82,11 @@ export class ApiNodeService {
     return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/card/obtener/'+id)
   }
 
+  getPenitencias(card_id:any){
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/penitencia/obtener/'+card_id)
+
+  }
+
 
 
 

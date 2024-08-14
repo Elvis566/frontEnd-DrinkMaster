@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>game</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title slot="start">
@@ -13,8 +7,13 @@
       <ion-title slot="end">No hay jugadores</ion-title>
     </ion-toolbar>
   </ion-header>
+<<<<<<< HEAD
 
   <ion-content>
+=======
+  
+  <ion-content *ngIf="cartaSeleccionada">
+>>>>>>> 81ec9c4b15c62e7c128c228b98845d5720cc4722
     <ion-card class="card-center">
       <ion-card-header>
         <ion-card-title>
@@ -22,7 +21,8 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Desliza a la derecha para verdad o a la izquierda para reto</p>
+        <img src="{{cartaSeleccionada.url}}" alt="">
+        <p>{{penitencia}}</p>
         <!-- Aquí puedes insertar la penitencia o contenido de la carta -->
       </ion-card-content>
     </ion-card>
@@ -35,5 +35,8 @@
       </ion-toolbar>
     </ion-footer>
   </ion-content>
+<<<<<<< HEAD
 
 </ion-content>
+=======
+>>>>>>> 81ec9c4b15c62e7c128c228b98845d5720cc4722

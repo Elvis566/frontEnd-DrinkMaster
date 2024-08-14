@@ -44,7 +44,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   getFriends(){
-    this.aps.getFriends(this.idUser).subscribe({
+    this.aps.getFriends(this.id).subscribe({
       next:(data:any)=> {
         this.amigos = data.friendsData
         // this.avatar_id = data.friendsData.avatar
@@ -56,7 +56,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   createPlayer(codigo:any){
-    this.aps.createPlayer(this.idUser, codigo.value).subscribe({
+    this.aps.createPlayer(this.idUser, codigo).subscribe({
       next:(data:any)=>{
         this.router.navigate(['/game'])
 

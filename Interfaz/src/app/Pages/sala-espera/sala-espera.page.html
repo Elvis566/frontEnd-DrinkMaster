@@ -57,7 +57,7 @@
               <ion-list>
                 <ion-item *ngFor="let item of amigos">
                   <ion-avatar slot="start">
-                    <img [src]="item.avatar" />
+                    <img [src]="item.url" />
                   </ion-avatar>
                   <ion-label>
                     <h2>{{item.apodo}}</h2>
@@ -76,7 +76,7 @@
 
     </ion-card-content>
 
-    <ion-button ((click)="createPlayer(dataGame.invite_code)")  expand="block" fill="clear" shape="round">
+    <ion-button (click)="createPlayer(dataGame.invite_code)"  expand="block" fill="clear" shape="round">
       START
     </ion-button>
 
