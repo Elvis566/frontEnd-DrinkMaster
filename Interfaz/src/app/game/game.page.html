@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>game</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title slot="start">
+        <ion-icon name="chatbubbles-outline" (click)="openChat()"></ion-icon>
+      </ion-title>
+      <ion-title slot="end">No hay jugadores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card class="card-center">
+      <ion-card-header>
+        <ion-card-title>
+          A Jugar!
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Desliza a la derecha para verdad o a la izquierda para reto</p>
+        <!-- Aquí puedes insertar la penitencia o contenido de la carta -->
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button color="primary" expand="block" >Finalizado</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>
+  
+</ion-content>

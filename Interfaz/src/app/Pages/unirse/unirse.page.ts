@@ -20,7 +20,7 @@ export class UnirsePage implements OnInit {
     console.log(this.id, codigo.value);
     this.apiS.createPlayer(this.id, codigo.value).subscribe({
       next:(data:any)=>{
-        this.router.navigate(['/sala-espera'])
+        // this.router.navigate(['/sala-espera'])
 
       },error:(e:any)=>{
         console.log(e);
