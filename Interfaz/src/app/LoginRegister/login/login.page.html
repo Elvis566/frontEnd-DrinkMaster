@@ -24,9 +24,18 @@
           <span class="span">Forgot password?</span>
       </div>
 
-      <button class="button-submit" (click)="login(email, password)">Sign In</button>
+      <button class="button-submit" id="footerAnchor" (click)="login(email, password)">Sign In</button>
 
       <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
     </form>
+
+    <ion-toast
+    trigger="footerAnchor"
+    position="bottom"
+    positionAnchor="footer"
+    message={{msg}}
+    duration="2000"
+  ></ion-toast>
+
   </div>
 </ion-content>
