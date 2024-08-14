@@ -10,6 +10,7 @@ export class SalaEsperaPage implements OnInit {
 
   amigos:any;
   id: any = localStorage.getItem('idGame');
+  idUser: any = localStorage.getItem('idUser');
   dataGame:any;
   jugadores:any;
 
@@ -42,7 +43,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   getFriends(){
-    this.aps.getFriends(this.id).subscribe({
+    this.aps.getFriends(this.idUser).subscribe({
       next:(data:any)=> {
         this.amigos = data.friendsData
         // this.avatar_id = data.friendsData.avatar
