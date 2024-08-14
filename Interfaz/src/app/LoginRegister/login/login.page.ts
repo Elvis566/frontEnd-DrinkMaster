@@ -22,11 +22,11 @@ export class LoginPage  {
         localStorage.setItem('idUser', datos.user.id)
 
         this.router.navigate(['/tabs-inicio'])
+        this.presentAlert('Login Failed', 'Incorrect email or password.');
       },
       error:(e:any)=>{
         debugger
         console.log(e);
-        this.presentAlert('Login Failed', 'Incorrect email or password.');
       }
     })
   }
