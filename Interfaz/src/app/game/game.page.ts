@@ -9,6 +9,8 @@ import { ApiNodeService } from '../Servicios/api-node.service';
 export class GamePage implements OnInit {
   id: any = localStorage.getItem('idGame');
   listaCards:any
+  cartaSeleccionada: any
+  penitencia:any
 
   constructor(private apis:ApiNodeService) { }
 
@@ -23,5 +25,28 @@ export class GamePage implements OnInit {
       }
     })
   }
+
+  seleccionarCartaAleatoria() {
+    if (this.listaCards && this.listaCards.length > 0) {
+      const indiceAleatorio = Math.floor(Math.random() * this.listaCards.length);
+      this.cartaSeleccionada = this.listaCards[indiceAleatorio];
+    }
+  }
+
+  getPenitencia(){
+    if(this.cartaSeleccionada){
+      this.apis.getPenitencias(this.cartaSeleccionada.id).subscribe({
+        next:(data:any)=>{
+          this.penitencia = data.penitencia
+        },error:(e:any)=>{
+          console.log(e);
+        }
+      })
+    }
+
+
+  }
+
+
 
 }
