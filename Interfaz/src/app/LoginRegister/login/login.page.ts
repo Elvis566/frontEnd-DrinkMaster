@@ -19,7 +19,7 @@ export class LoginPage  {
     this.apiS.loginUser(email.value, password.value).subscribe({
       next: (datos:any)=>{
 
-        this.msg = datos.error
+        this.msg = datos.message
 
         localStorage.setItem('apodo', datos.user.apodo)
         localStorage.setItem('foto', datos.user.avatar_id)

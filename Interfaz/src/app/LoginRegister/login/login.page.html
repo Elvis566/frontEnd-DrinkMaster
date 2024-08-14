@@ -24,14 +24,19 @@
           <span class="span">Forgot password?</span>
       </div>
 
-      <button class="button-submit" (click)="login(email, password)">Sign In</button>
+      <button class="button-submit" id="open-toast" (click)="login(email, password)">Sign In</button>
+
+      <ion-toast
+        message={{msg}}
+        trigger="open-toast"
+        swipeGesture="vertical"
+        position="bottom"
+        positionAnchor="footer"
+    ></ion-toast>
 
       <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
     </form>
   </div>
 
-  <div>
-    <p>{{ msg.message }}</p>
-  </div>
 
 </ion-content>
