@@ -22,19 +22,9 @@
         <ion-label>Cerrar Session</ion-label>
       </ion-button>  -->
 
-      <ion-buttons>
-        <ion-button routerLink="/tabs-inicio/home">
-            <ion-icon name="person-circle-outline" slot="start" size="large"></ion-icon>
-          <ion-label >Perfil</ion-label>
-        </ion-button>
-          <ion-button (click)="shareApp()">
-            <ion-icon name="share-outline" slot="start" size="large"></ion-icon>
-            <ion-label>Compartir App</ion-label>
-        </ion-button>
-        <ion-button (click)="cerrarSeccion()">
-            <ion-icon name="log-in-outline" slot="start" size="large"></ion-icon>
-            <ion-label>Cerrar Session</ion-label>
-        </ion-button>
+      <ion-buttons routerLink="/tabs-inicio/home">
+        <ion-icon name="person-circle-outline" slot="start" size="large"></ion-icon>
+        <ion-label >Perfil</ion-label>
       </ion-buttons>
     </ion-list>
 
