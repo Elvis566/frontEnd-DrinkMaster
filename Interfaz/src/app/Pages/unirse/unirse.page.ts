@@ -10,6 +10,7 @@ import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 export class UnirsePage implements OnInit {
 
   id: any= localStorage.getItem('idUser')
+  game_id: any
 
   constructor(private apiS:ApiNodeService, private router:Router) { }
 
@@ -17,15 +18,17 @@ export class UnirsePage implements OnInit {
   }
 
   unirGame(codigo:any){
-    console.log(this.id, codigo.value);
     this.apiS.createPlayer(this.id, codigo.value).subscribe({
       next:(data:any)=>{
-        // this.router.navigate(['/sala-espera'])
+        localStorage.setItem('idGame', data.player.game_id)
+        this.router.navigate(['/sala-espera'])
 
       },error:(e:any)=>{
         console.log(e);
       }
     })
   }
+
+
 
 }
