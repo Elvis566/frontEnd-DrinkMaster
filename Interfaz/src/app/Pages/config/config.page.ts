@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Share } from '@capacitor/share';
 
 @Component({
@@ -8,7 +9,7 @@ import { Share } from '@capacitor/share';
 })
 export class ConfigPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,7 @@ export class ConfigPage implements OnInit {
 
   cerrarSeccion(){
     localStorage.clear()
+    this.router.navigate(['/login'])
 
   }
 
