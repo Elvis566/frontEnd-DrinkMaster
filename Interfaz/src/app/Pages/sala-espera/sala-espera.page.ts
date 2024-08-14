@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class SalaEsperaPage implements OnInit {
   dataGame:any;
   jugadores:any;
 
-  constructor(private aps: ApiNodeService) { }
+  constructor(private aps: ApiNodeService, private router:Router) { }
 
   ngOnInit() {
     this.getSala();
@@ -57,6 +58,7 @@ export class SalaEsperaPage implements OnInit {
   createPlayer(codigo:any){
     this.aps.createPlayer(this.idUser, codigo.value).subscribe({
       next:(data:any)=>{
+        this.router.navigate(['/game'])
 
       },error:(e:any)=>{
         console.log(e);
