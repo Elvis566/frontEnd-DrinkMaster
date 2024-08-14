@@ -17,6 +17,7 @@ export class UnirsePage implements OnInit {
   }
 
   unirGame(codigo:any){
+    console.log(this.id, codigo.value);
     this.apiS.createPlayer(this.id, codigo.value).subscribe({
       next:(data:any)=>{
         this.router.navigate(['/sala-espera'])
