@@ -30,8 +30,8 @@
     </form>
   </div>
 
-  <div>
-    <p>{{ msg }}</p>
+  <div *ngIf="msg">
+    <p>{{ msg.message }}</p>
   </div>
 
 </ion-content>
