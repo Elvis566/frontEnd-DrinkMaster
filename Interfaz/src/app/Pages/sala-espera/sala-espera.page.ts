@@ -24,12 +24,16 @@ export class SalaEsperaPage implements OnInit {
     this.getSala();
     this.getJugadores();
     this.interval = setInterval(()=>{
-      this.socketS.onGameStarted(this.id)
-      clearInterval(this.interval);
-      this.router.navigate(['/game']);
-      }, 5000)
-    
-    this.socketS.onGameStarted(this.id)
+      this.aps.ObtenerGame(this.id).subscribe({
+        next:(data:any)=>{
+          if(data.encontrada.status === 'started'){
+            this.router.navigate(['/game']);
+          }
+        }, error:(e:any)=>{
+          console.log(e);
+        }
+      })
+      }, 3000)
   }
 
   getSala(){
@@ -66,7 +70,7 @@ export class SalaEsperaPage implements OnInit {
   }
 
   createPlayer(codigo:any){
-    this.socketS.startGame(this.id)
+    this.aps.starGame(this.id)
     this.aps.createPlayer(this.idUser, codigo).subscribe({
       next:(data:any)=>{
         this.router.navigate(['/game'])

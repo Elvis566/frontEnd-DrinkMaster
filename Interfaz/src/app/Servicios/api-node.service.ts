@@ -94,6 +94,18 @@ export class ApiNodeService {
     })
   }
 
+  starGame(gameId:any){
+    return this.httpclient.post('https://backend-drinkmaster-production.up.railway.app/game/inicio',{
+      gameId: gameId
+    })
+  }
+
+  ObtenerGame(id:any){
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/game/inicio/'+id)
+  }
+
+
+
 
 
 

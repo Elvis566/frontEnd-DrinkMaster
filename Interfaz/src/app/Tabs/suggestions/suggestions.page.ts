@@ -22,29 +22,9 @@ export class SuggestionsPage {
     
   }
 
-  async enviarComentario(comentario:any) {
+  enviarComentario(comentario:any) {
 
       // Enviar los datos al backend
-      this.apis.createSugerencia(comentario.value, this.idUser).subscribe(
-        async response => {
-          // Mostrar alerta de éxito
-          const alert = await this.alertController.create({
-            header: 'Comentario Enviado',
-            message: 'Gracias por tu comentario.',
-            buttons: ['OK']
-          });
-          await alert.present();
-
-        },
-        async error => {
-          // Manejo de error
-          const alert = await this.alertController.create({
-            header: 'Error',
-            message: 'Hubo un problema al enviar tu comentario. Inténtalo de nuevo.',
-            buttons: ['OK']
-          });
-          await alert.present();
-        }
-      );
+      this.apis.createSugerencia(comentario.value, this.idUser).subscribe();
     }
 }
