@@ -58,12 +58,13 @@ const routes: Routes = [
   {
     path: 'game',
     loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
-  },  {
+  },
+  {
     path: 'finally',
     loadChildren: () => import('./finally/finally.module').then( m => m.FinallyPageModule)
   },
   {
-    path: 'edperfil',
+    path: 'editar-perfil',
     loadChildren: () => import('./edperfil/edperfil.module').then( m => m.EdperfilPageModule)
   },
 
