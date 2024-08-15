@@ -10,7 +10,7 @@
     <!-- Campo para el comentario -->
     <ion-item>
       <ion-label position="floating">Comentario</ion-label>
-      <ion-textarea formControlName="comentario"></ion-textarea>
+      <ion-textarea formControlName="comentario" placeholder=" El comentario debe tener al menos 10 caracteres."></ion-textarea>
     </ion-item>
     <ion-note *ngIf="feedbackForm.get('comentario').invalid && feedbackForm.get('comentario').touched" color="danger">
       El comentario debe tener al menos 10 caracteres.

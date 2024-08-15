@@ -21,9 +21,7 @@ export class SuggestionsPage {
     private http: HttpClient,
     private apis:ApiNodeService
   ) {
-    this.feedbackForm = this.formBuilder.group({
-      comentario: ['', [Validators.required, Validators.minLength(10)]],
-    });
+    
   }
 
   async enviarComentario() {
