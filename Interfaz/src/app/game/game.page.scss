@@ -16,6 +16,7 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  gap: 20px; /* Espacio entre los botones */
 }
 
 .colored-button1 {
@@ -33,9 +34,9 @@
 }
 
 .card-center {
-    margin: 20% auto;
-    width: 80%;
+    margin: 40% auto;
     max-width: 300px;
+    height: 400px;
     text-align: center;
   }
   
@@ -46,5 +47,21 @@
   ion-icon {
     font-size: 24px;
     cursor: pointer;
+  }
+
+  ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(211, 35, 73);
+    --color: white;
   }
   
