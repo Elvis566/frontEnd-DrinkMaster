@@ -1,26 +1,27 @@
 <ion-content>
 
     <ion-buttons class="align-right">
-      <ion-button>
+      <ion-button id="open-modal" fill="clear">
         <ion-icon name="chatbox-outline" style="font-size: 30px;"></ion-icon>
       </ion-button>
       <ion-button (click)="finalGame()">
         <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
       </ion-button>
-    </ion-buttons>
 
-    <!-- <ion-card *ngIf="cartaSeleccionada" class="card-center">
-      <ion-card-header>
-        <ion-card-title>
-          A Jugar!
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <img src="{{cartaSeleccionada.url}}" alt="">
-        <p>{{penitencia}}</p>
-        Aquí puedes insertar la penitencia o contenido de la carta
-      </ion-card-content>
-    </ion-card> -->
+      <ion-modal  #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Chats</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+            
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-buttons>
 
     <ion-card class="card-center" *ngIf="jugadorActual">
       <ion-card-header>
@@ -32,9 +33,11 @@
         </ion-avatar>
         <h2>Es tu turno {{jugadorActual.apodo}}</h2>
       </ion-card-header>
-      <ion-card-content *ngIf="cartaSeleccionada && penitencia">
+      <br>
+      <ion-card-content>
         <img src="{{cartaSeleccionada.url}}">
-        <p>{{penitencia.penitencia}} </p>
+        <br>
+        <p>{{penitencia.descripcion}} </p>
       </ion-card-content>
     </ion-card>
 
