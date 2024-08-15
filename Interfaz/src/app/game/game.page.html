@@ -21,27 +21,17 @@
           </ion-content>
         </ng-template>
       </ion-modal>
-
     </ion-buttons>
 
-    <!-- <ion-card *ngIf="cartaSeleccionada" class="card-center">
+    <ion-card class="card-center" *ngIf="jugadorActual">
       <ion-card-header>
         <ion-card-title>
           A Jugar!
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <img src="{{cartaSeleccionada.url}}" alt="">
-        <p>{{penitencia}}</p>
-        Aquí puedes insertar la penitencia o contenido de la carta
-      </ion-card-content>
-    </ion-card> -->
-
-    <ion-card class="card-center">
-      <ion-card-header>
-        <ion-card-title>
-          A Jugar!
-        </ion-card-title>
+        </ion-card-title >
+        <ion-avatar>
+          <img [src]="jugadorActual.avatar" />
+        </ion-avatar>
+        <h2>Es tu turno {{jugadorActual.apodo}}</h2>
       </ion-card-header>
       <br>
       <ion-card-content>
@@ -51,12 +41,16 @@
       </ion-card-content>
     </ion-card>
 
+    <ion-button *ngIf="botonPrecionado"  (click)="iniciarJuego()"  class="colored-button1" expand="block" fill="clear" shape="round">
+      Start
+    </ion-button>
+
 
     <ion-buttons class="bottom-center">
-      <ion-button class="colored-button1" expand="block" fill="clear" shape="round">
+      <ion-button (click)="continuarJuego(0)"  class="colored-button1" expand="block" fill="clear" shape="round">
         Omitir
       </ion-button>
-      <ion-button class="colored-button" expand="block" fill="clear" shape="round">
+      <ion-button  (click)="continuarJuego(1)" class="colored-button" expand="block" fill="clear" shape="round">
         Cumplir
       </ion-button>
     </ion-buttons>

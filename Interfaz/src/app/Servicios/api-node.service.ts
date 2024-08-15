@@ -82,8 +82,8 @@ export class ApiNodeService {
     return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/card/obtener/'+id)
   }
 
-  getPenitencias(card_id:any){
-    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/penitencia/obtener/'+card_id)
+  getPenitencias(id:any){
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/penitencia/obtener/'+id)
 
   }
 
@@ -95,13 +95,19 @@ export class ApiNodeService {
   }
 
   starGame(gameId:any){
-    return this.httpclient.post('https://backend-drinkmaster-production.up.railway.app/game/inicio',{
+    return this.httpclient.post('https://backend-drinkmaster-production.up.railway.app/game/inico',{
       gameId: gameId
     })
   }
 
   ObtenerGame(id:any){
-    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/game/inicio/'+id)
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/game/consultar/'+id)
+  }
+
+  updatePlayers(id:any, score:any){
+    return this.httpclient.put('https://backend-drinkmaster-production.up.railway.app/player/update/'+id,{
+      score:score
+    });
   }
 
 
