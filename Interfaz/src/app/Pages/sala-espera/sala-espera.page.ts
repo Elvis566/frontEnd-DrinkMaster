@@ -27,7 +27,7 @@ export class SalaEsperaPage implements OnInit {
       this.socketS.onGameStarted(this.id)
       clearInterval(this.interval);
       this.router.navigate(['/game']);
-      })
+      }, 5000)
     
     this.socketS.onGameStarted(this.id)
   }
