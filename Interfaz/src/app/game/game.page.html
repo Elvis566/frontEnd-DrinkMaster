@@ -22,24 +22,32 @@
       </ion-card-content>
     </ion-card> -->
 
-    <ion-card class="card-center">
+    <ion-card class="card-center" *ngIf="jugadorActual">
       <ion-card-header>
         <ion-card-title>
           A Jugar!
-        </ion-card-title>
+        </ion-card-title >
+        <ion-avatar>
+          <img [src]="jugadorActual.avatar" />
+        </ion-avatar>
+        <h2>Es tu turno {{jugadorActual.apodo}}</h2>
       </ion-card-header>
-      <ion-card-content *ngIf="cartaSeleccionada">
+      <ion-card-content *ngIf="cartaSeleccionada && penitencia">
         <img src="{{cartaSeleccionada.url}}">
-        <p>{{penitencia.descripcion}} </p>
+        <p>{{penitencia.penitencia}} </p>
       </ion-card-content>
     </ion-card>
 
+    <ion-button *ngIf="botonPrecionado"  (click)="iniciarJuego()"  class="colored-button1" expand="block" fill="clear" shape="round">
+      Start
+    </ion-button>
+
 
     <ion-buttons class="bottom-center">
-      <ion-button class="colored-button1" expand="block" fill="clear" shape="round">
+      <ion-button (click)="continuarJuego(0)"  class="colored-button1" expand="block" fill="clear" shape="round">
         Omitir
       </ion-button>
-      <ion-button class="colored-button" expand="block" fill="clear" shape="round">
+      <ion-button  (click)="continuarJuego(1)" class="colored-button" expand="block" fill="clear" shape="round">
         Cumplir
       </ion-button>
     </ion-buttons>

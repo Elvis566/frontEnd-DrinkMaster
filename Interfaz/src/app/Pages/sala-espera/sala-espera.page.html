@@ -45,7 +45,7 @@
           <ion-label>Invitar Amigos</ion-label>
         </ion-item>
 
-        <ion-modal *ngIf="amigos" #modal trigger="open-modal">
+        <ion-modal  #modal trigger="open-modal">
           <ng-template>
             <ion-content>
               <ion-toolbar>
@@ -54,7 +54,7 @@
                   <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
                 </ion-buttons>
               </ion-toolbar>
-              <ion-list>
+              <ion-list *ngIf="amigos">
                 <ion-item *ngFor="let item of amigos">
                   <ion-avatar slot="start">
                     <img [src]="item.url" />

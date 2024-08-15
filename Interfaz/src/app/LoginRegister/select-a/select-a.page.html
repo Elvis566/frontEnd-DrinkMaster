@@ -24,16 +24,17 @@
 
   <div class="form-container">
     <form class="form">
-     <!-- <div *ngIf="itemId">
+     <div *ngIf="itemId">
+
         <button type="button" class="avatar" (click)="goGaleria()">
           <ion-avatar>
             <img alt="Silhouette of a person's head" src="{{itemUrl}}" />
           </ion-avatar>
         </button>
-     </div> -->
+     </div>
    
       <div *ngIf="datosAvatars" >
-        <button type="button" class="avatar" (click)="goGaleria()">
+        <button type="button" class="avatar" (click)="goGaleria()" hidden>
           <ion-avatar>
             <img alt="Silhouette of a person's head" src="{{datosAvatars[0].url}}" />
           </ion-avatar>
