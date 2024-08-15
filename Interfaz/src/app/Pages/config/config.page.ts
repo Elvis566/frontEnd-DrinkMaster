@@ -24,7 +24,9 @@ export class ConfigPage implements OnInit {
 
 
   cerrarSeccion(){
-    localStorage.clear()
+    localStorage.removeItem('idUser')
+    localStorage.removeItem('apodo')
+    localStorage.removeItem('foto')
     this.router.navigate(['/login'])
   }
 

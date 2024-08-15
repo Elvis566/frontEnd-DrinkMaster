@@ -7,7 +7,7 @@ import { ApiNodeService } from '../Servicios/api-node.service';
   styleUrls: ['./game.page.scss'],
 })
 export class GamePage implements OnInit {
-  id: any = localStorage.getItem('idGame');
+  id: any = localStorage.getItem('typeGame');
   listaCards:any
   cartaSeleccionada: any
   penitencia:any
