@@ -1,20 +1,15 @@
+<ion-content>
 
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title slot="start">
-        <ion-icon name="chatbubbles-outline"></ion-icon>
-      </ion-title>
-      <ion-title slot="end">No hay jugadores</ion-title>
-    </ion-toolbar>
-  </ion-header>
-<<<<<<< HEAD
+    <ion-buttons class="align-right">
+      <ion-button>
+        <ion-icon name="chatbox-outline" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-  <ion-content>
-=======
-  
-  <ion-content *ngIf="cartaSeleccionada">
->>>>>>> 81ec9c4b15c62e7c128c228b98845d5720cc4722
-    <ion-card class="card-center">
+    <!-- <ion-card *ngIf="cartaSeleccionada" class="card-center">
       <ion-card-header>
         <ion-card-title>
           A Jugar!
@@ -23,20 +18,30 @@
       <ion-card-content>
         <img src="{{cartaSeleccionada.url}}" alt="">
         <p>{{penitencia}}</p>
-        <!-- Aquí puedes insertar la penitencia o contenido de la carta -->
+        Aquí puedes insertar la penitencia o contenido de la carta
+      </ion-card-content>
+    </ion-card> -->
+
+    <ion-card class="card-center">
+      <ion-card-header>
+        <ion-card-title>
+          A Jugar!
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFCElEQVR4nO3aC0xTZxQA4CMuCMrGkGxOQ0y2oMQpYYwh4pwE6HgLbTdGdLpkW7IsbopRoZRpeCxoSSkPmxYUKK8OXcGWJZuMuemCY+o2hCERGDig22CRZdLybqFnuR0Q7ICL3Ntbhj3JSdP2T9vv/89/7z1tAaxhDWtYY7lFWbcmWa7WoCWSeG8r2Nwh/LZeaqkVJt7b7EDTsILV1hVGa0mr6ZkEfk17G1eJsdwqZEUr8ClY7nv4eI0auSqcmT0cJV7mqjCHU4VvsVXoFa1A++UMRtPkqFDHVWITR4Xlr1Wh57IHc2dmJb786ICVaAjKV6+1GPjUrUHcdkaPHhI9pjcOmB0ceX7oHmXsYsDFXRqMvDCKNvGIEPdvPsYzILdiFEu6zAcOL+qtA6bBZ+4M4CaRfhpqmm5ZehS3aM0CDpK2FzAKFjQOoFPyxJzYqXRMmsDTDQO0gwMzGw8xBv74p0Fc/RE5diodTk6gYAHohwH7CW7sYAQsbdWiU/LcZTxXOqfoMbdNSwuYrRwf90u6ascI2EM8+tDYqdyeN0oLeI+8v5MWLBk46ebgorHGjEdMqx+kDA7N/60GmAB7iimC4xB35FIHB4lbMhkB2/N1lMFPnBihDA4Q1e83O7i0S2MsSarglfETlMG7TtVuNju4rLsf7RJGKIMf51MraXbF2BAgrjA7WK7W4JbUu5TBHmm/UAJHlPTdpg1LBo79tA5teWOzQuxnrP4q3uynLjveKMZdvE4JHHy2swKYAhe09GBMziV05GsfgKxNvI97xdXT99/I/hKf5GseGOOU2I9vir9AWduflMCs7KYkxsBytQbzfu7EI4UKjBJWY6CgFjkZn+Ox4kpMuNo7jUu48gcelSmQLbxkHEPcHiuqwHPNasoXHn7pNyMYBcuJA1jXfZTcasesuiaUNtw1HtC2ZQ9Pg91zho2PSRs6Jsd0GO+TvS4pWIkG36SapxkHy2f0wik/DuILkv9eWxOPEc8RYxb6emRg2pr+xYI5FeSnKWIMXeAwWc91sCT49Fff4wfiwnmTGEMX+NXc9kKLguU0Jxk4MKvx8CMFfkVQt9Os4PwOLdryDRhaPjb9odwyx9FFMME4mNamf74V3lmgQ4eTBvQ5q8PteTpcEY+477MRxsG0Nv3zgeOvDRmPtt55OnQVjeNKHqKkVcs4mNamfz5wWbcGnVIMGPLJGD6XMY6eEr1F9jCtTT/ZQSv8/BiuOWEwlvOhK8MWAfsL6w8AU2BB44CxrAl0UafGMuD079wYA8sZyrnAtDf9Sx0cXtrXDOYK4RIE0970m4Q7AOydmaucN7zvfbQczZ2s7CZmmn4y8DqvkAxLgmlv+snC68MiNkt8py6i9C81cYlH9q0E3emT9vU6YDi8p1bbxm7N/o3+B+I83pNm70r9pjJI0nojouzv34lvI8yBjbow1AcWiPUAQPxjxh8A2KYlT+TqDa7vPBt6MNHrcJHUX/hDdci57ttRihENVXCYrJf+pn8RYQsAxB/HXImKBwAWAETPNhHOW3cffH5fappvgqqEldNcG15871f2Rb1uoeBgabsMlnDYA8AzAEBcFfkCQDAAxJhOArEt1r8UGev+tkhIti0CRA1H4H8WNgDgCAAbJ88AuwFgz2zV4OCy5d1NHF6yz3FFYYCo/nKYrKfVT3CNnl/6l+i2eN1kEmImJ2xZhwMAuADAVgB40dIfxhrWgKUT/wDdiX1B3AOILQAAAABJRU5ErkJggg==">
+        <p>Penitencia </p>
       </ion-card-content>
     </ion-card>
 
-    <ion-footer>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-          <ion-button color="primary" expand="block" >Finalizado</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-footer>
-  </ion-content>
-<<<<<<< HEAD
+
+    <ion-buttons class="bottom-center">
+      <ion-button class="colored-button1" expand="block" fill="clear" shape="round">
+        Omitir
+      </ion-button>
+      <ion-button class="colored-button" expand="block" fill="clear" shape="round">
+        Cumplir
+      </ion-button>
+    </ion-buttons>
 
 </ion-content>
-=======
->>>>>>> 81ec9c4b15c62e7c128c228b98845d5720cc4722

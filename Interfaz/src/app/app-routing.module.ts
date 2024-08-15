@@ -50,7 +50,8 @@ const routes: Routes = [
   {
     path: 'sala-espera',
     loadChildren: () => import('./Pages/sala-espera/sala-espera.module').then( m => m.SalaEsperaPageModule)
-  },  {
+  },
+  {
     path: 'buscar-amigos',
     loadChildren: () => import('./Pages/buscar-amigos/buscar-amigos.module').then( m => m.BuscarAmigosPageModule)
   },
@@ -58,7 +59,6 @@ const routes: Routes = [
     path: 'game',
     loadChildren: () => import('./game/game.module').then( m => m.GamePageModule)
   },
-
 
 ];
 
