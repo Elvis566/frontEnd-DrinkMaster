@@ -30,6 +30,7 @@ export class CrearPage implements OnInit {
   createGame(game_id:any){
     this.apiS.createGame(this.user_id, game_id).subscribe({
       next:(data:any)=> {
+        localStorage.setItem('typeGame', game_id);
         localStorage.setItem('idGame', data.partida.id);
         this.router.navigate(['/sala-espera'])
       }, error:(e:any)=>{
