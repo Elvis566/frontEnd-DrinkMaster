@@ -101,7 +101,7 @@ export class ApiNodeService {
   }
 
   ObtenerGame(id:any){
-    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/game/inicio/'+id)
+    return this.httpclient.get('https://backend-drinkmaster-production.up.railway.app/game/consultar/'+id)
   }
 
 
