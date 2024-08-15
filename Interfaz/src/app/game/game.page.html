@@ -28,7 +28,7 @@
           A Jugar!
         </ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content *ngIf="cartaSeleccionada">
         <img src="{{cartaSeleccionada.url}}">
         <p>{{penitencia.descripcion}} </p>
       </ion-card-content>
