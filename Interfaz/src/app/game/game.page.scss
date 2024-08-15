@@ -34,9 +34,9 @@
 }
 
 .card-center {
-    margin: 40% auto;
+    margin: 20% auto;
     max-width: 300px;
-    height: 400px;
+    height: 600px;
     text-align: center;
   }
   
@@ -56,12 +56,24 @@
   }
   
   ion-modal::part(backdrop) {
-    background: rgba(209, 213, 219);
+    background: rgb(123, 0, 224);
     opacity: 1;
   }
   
   ion-modal ion-toolbar {
-    --background: rgb(211, 35, 73);
-    --color: white;
+    --background: rgba(240, 38, 82, 0.342);
+    --color: rgb(114, 2, 2);
+  }
+
+  ion-card-content img {
+    width: 175px; /* Ajusta este valor según sea necesario */
+    height: 250px; 
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  }
+
+  ion-card-title {
+    font-size: 30px; /* Ajusta este valor según sea necesario */
+    font-weight: bold; /* Opcional: para hacer el texto más grueso */
+    color: blue; 
   }
   

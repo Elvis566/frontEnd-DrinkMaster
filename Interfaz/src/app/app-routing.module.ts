@@ -62,6 +62,10 @@ const routes: Routes = [
     path: 'finally',
     loadChildren: () => import('./finally/finally.module').then( m => m.FinallyPageModule)
   },
+  {
+    path: 'edperfil',
+    loadChildren: () => import('./edperfil/edperfil.module').then( m => m.EdperfilPageModule)
+  },
 
 
 ];
