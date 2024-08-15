@@ -16,20 +16,16 @@ export class SuggestionsPage {
   idUser: any = localStorage.getItem('idUser')
 
   constructor(
-    private formBuilder: FormBuilder,
     private alertController: AlertController,
-    private http: HttpClient,
     private apis:ApiNodeService
   ) {
     
   }
 
-  async enviarComentario() {
-    if (this.feedbackForm.valid) {
-      const { comentario } = this.feedbackForm.value;
+  async enviarComentario(comentario:any) {
 
       // Enviar los datos al backend
-      this.apis.createSugerencia(comentario, this.idUser).subscribe(
+      this.apis.createSugerencia(comentario.value, this.idUser).subscribe(
         async response => {
           // Mostrar alerta de éxito
           const alert = await this.alertController.create({
@@ -39,8 +35,6 @@ export class SuggestionsPage {
           });
           await alert.present();
 
-          // Limpiar el formulario después de enviar
-          this.feedbackForm.reset();
         },
         async error => {
           // Manejo de error
@@ -53,5 +47,4 @@ export class SuggestionsPage {
         }
       );
     }
-  }
 }
