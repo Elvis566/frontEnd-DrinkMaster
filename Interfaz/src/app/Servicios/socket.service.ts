@@ -14,7 +14,7 @@ export class SocketService {
 
      // Emitir el evento para iniciar un juego
   startGame(gameId: string) {
-    return this.socket.emit('startGame', gameId);
+     this.socket.emit('startGame', gameId);
   }
 
   // Escuchar el evento de inicio de juego
