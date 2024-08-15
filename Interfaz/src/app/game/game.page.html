@@ -8,7 +8,7 @@
         <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
       </ion-button>
 
-      <ion-modal  #modal trigger="open-modal">
+      <!-- <ion-modal  #modal trigger="open-modal">
         <ng-template>
           <ion-content>
             <ion-toolbar>
@@ -20,7 +20,7 @@
             
           </ion-content>
         </ng-template>
-      </ion-modal>
+      </ion-modal> -->
     </ion-buttons>
 
     <ion-card class="card-center" *ngIf="jugadorActual">
@@ -34,14 +34,14 @@
         <h2>Tu turno {{jugadorActual.apodo}}</h2>
       </ion-card-header>
       <br>
-      <ion-card-content>
+      <ion-card-content *ngIf="cartaSeleccionada">
         <img src="{{cartaSeleccionada.url}}">
         <br>
-        <p>{{penitencia.descripcion}} </p>
+        <p>{{penitencia.penitencia}} </p>
       </ion-card-content>
     </ion-card>
 
-    <ion-button *ngIf="botonPrecionado"  (click)="iniciarJuego()"  class="colored-button1" expand="block" fill="clear" shape="round">
+    <ion-button id="btnstar" *ngIf="botonPrecionado"  (click)="iniciarJuego()"  class="colored-button1" expand="block" fill="clear" shape="round">
       Start
     </ion-button>
 

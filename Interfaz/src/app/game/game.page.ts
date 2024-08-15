@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiNodeService } from '../Servicios/api-node.service';
 import { Router } from '@angular/router';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -18,19 +19,41 @@ export class GamePage implements OnInit {
   turnoActual:number= 0
   jugadorActual:any
   botonPrecionado:boolean= true
+  dataGame: any
 
   constructor(private apis:ApiNodeService, private router:Router) { }
 
   ngOnInit() {
     this.getCards();
     this.getPlayers();
+    this.getGame();
     // this.getPenitencia()
     // this.seleccionarCartaAleatoria()
   }
 
   getGame(){
-    // this.apis.get('')
+    this.apis.getSala(this.idGame).subscribe({
+      next:(data:any)=>{
+        this.dataGame = data.dataSala[0];
+        // console.log(data.dataSala[0].invite_code);
+      }, error:(e:any)=>{
+        console.log(e);
+      }
+    })
   }
+
+  // updateGame(penitencia:any){
+  //   if(this.penitencia && this.penitencia.penitencia){
+  //     this.apis.upadteGame(this.idGame, this.cartaSeleccionada.url, penitencia).subscribe({
+  //       next:(data:any)=>{
+  
+  //       },error:(e:any)=>{
+  //         console.log(e);
+  //       }
+  //     })
+  //   }
+    
+  // }
 
   getCards(){
     this.apis.getCars(this.id).subscribe({
@@ -44,9 +67,12 @@ export class GamePage implements OnInit {
 
   iniciarJuego(){
     console.log(this.turnoActual);
+    // console.log(this.penitencia.penitencia);
+
     this.botonPrecionado = false,
     this.seleccionarCartaAleatoria();
     this.jugar();
+    // this.updateGame();
   }
   continuarJuego(puntaje:any){
     console.log(this.turnoActual);
@@ -54,6 +80,7 @@ export class GamePage implements OnInit {
     this.updatePlayer(this.jugadorActual.id, puntaje)
     this.seleccionarCartaAleatoria();
     this.jugar();
+    // this.updateGame();
   }
   seleccionarCartaAleatoria() {
     if (this.listaCards && this.listaCards.length > 0) {
@@ -71,7 +98,9 @@ getPenitencia(id:any){
   debugger
   this.apis.getPenitencias(id).subscribe({
     next:(data:any)=>{
+      console.log(data.penitencia);
       this.penitencia = data.penitencia
+      // this.updateGame(data.penitencia.penitencia)
     }, error:(e:any)=>{
       console.log(e);
     }
