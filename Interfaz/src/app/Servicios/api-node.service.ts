@@ -110,6 +110,27 @@ export class ApiNodeService {
     });
   }
 
+  finallyGame(id:any){
+    return this.httpclient.delete('https://backend-drinkmaster-production.up.railway.app/game/delete/'+id)
+    
+  }
+
+  upadteGame(id:any, cardJugada:any, penitenciaJugada:any){
+    return this.httpclient.put('https://backend-drinkmaster-production.up.railway.app/game/delete/'+id,{
+      cardJugada:cardJugada,
+      penitenciaJugada:penitenciaJugada
+    })
+    
+  }
+
+  upadteUser(id:any, apodo:any, avatar_id:any){
+    return this.httpclient.put('https://backend-drinkmaster-production.up.railway.app/game/delete/'+id,{
+      apodo:apodo,
+      avatar_id:avatar_id
+    })
+    
+  }
+
 
 
 
